@@ -1,0 +1,58 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © goehringn
+// Script to set custom horizontal lines in a set increment with alert functionality
+// last updated 10/24/2021
+//@version=4
+study("Horizontal Lines Custom Increments", overlay=true)
+
+toadd = 0.
+incval = 0.
+selectedprice = 0.
+background = 0.
+line1 = 0.
+line2 = 0.
+
+
+selectedprice := input(title="Type Your Start Price Here", type=input.float, defval=0)
+incval := input(title="Increment Value", type=input.float, defval=0)
+toadd := incval
+bool h = close > (selectedprice+toadd)
+bool l = close < (selectedprice-toadd)
+alertcondition(h, title="Cross UP", message="{{ticker}} crossed {{close}}") //alert for when the price crosses the first upper interval
+alertcondition(l, title="Cross DOWN", message="{{ticker}} crossed {{close}}") //alert for when the price crosses the first lower interval
+alertcondition(h or l, title="Cross UP/DOWN", message="{{ticker}} crossed {{close}}") //alert for when the price crosses the first lower interval
+
+plot(selectedprice+(toadd*0), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true) //base line
+
+plot(selectedprice+(toadd*1), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true) //15 upper lines
+plot(selectedprice+(toadd*2), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*3), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*4), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*5), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*6), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*7), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*8), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*9), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*10), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*11), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*12), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*13), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*14), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice+(toadd*15), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+
+
+plot(selectedprice-(toadd*1), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true) //15 lower lines
+plot(selectedprice-(toadd*2), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*3), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*4), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*5), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*6), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*7), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*8), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*9), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*10), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*11), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*12), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*13), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*14), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
+plot(selectedprice-(toadd*15), title='Line', color=color.new(color.blue, 50), linewidth=1, style=plot.style_line, trackprice=true)
